@@ -1,7 +1,7 @@
 ---
 # tasks file for tomcat
 - name: Download tomcat package
-  command: "wget http://mirror.reverse.net/pub/apache/tomcat/tomcat-8/v8.5.40/bin/apache-tomcat-8.5.40.tar.gz"
+  command: "https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.58/bin/apache-tomcat-9.0.58.tar.gz"
   args:
      chdir: /tmp/
 
