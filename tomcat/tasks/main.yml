@@ -14,7 +14,7 @@
     - java-1.8.0-openjdk
 
 - name: Extract Tomcat archive
-  command: tar zxvf /tmp/apache-tomcat-8.5.40.tar.gz -C /opt/ creates=/opt/apache-tomcat-8.5.40
+  command: tar zxvf /tmp/apache-tomcat-9.0.58.tar.gz -C /opt/ creates=/opt/apache-tomcat-9.0.58
   args:
      chdir: /tmp/
 - name: Ansible template with_items example.
@@ -26,8 +26,8 @@
         owner: root
         group: root
   with_items:
-        - {src: '/etc/ansible/tomcat_latest/tomcat/templates/context.xml',dest: '/opt/apache-tomcat-8.5.40/webapps/manager/META-INF/'}
-        - {src: '/etc/ansible/tomcat_latest/tomcat/templates/tomcat-users.xml',dest: '/opt/apache-tomcat-8.5.40/conf/'}
+        - {src: '/etc/ansible/tomcat_latest/tomcat/templates/context.xml',dest: '/opt/apache-tomcat-9.0.58/webapps/manager/META-INF/'}
+        - {src: '/etc/ansible/tomcat_latest/tomcat/templates/tomcat-users.xml',dest: '/opt/apache-tomcat-9.0.58/conf/'}
 
 
 - name: copy arti facts to document root
@@ -36,7 +36,7 @@
      dest: /opt/apache-tomcat-8.5.40/webapps/sample.war
 
 #- name: Stop Tomcat
-#  command: nohup /opt/apache-tomcat-8.5.40/bin/shutdown.sh
+#  command: nohup /opt/apache-tomcat-9.0.58/bin/shutdown.sh
 
 - name: Start Tomcat
-  command: nohup /opt/apache-tomcat-8.5.40/bin/startup.sh
+  command: nohup /opt/apache-tomcat-9.0.58/bin/startup.sh
